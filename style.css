@@ -1,0 +1,69 @@
+:root {
+    --white: rgb(224, 219, 204);
+    --accent-clr: rgb(238, 175, 57);
+}
+
+@font-face {
+    font-family: 'Space Age';
+    src: url('./fonts/space\ age.woff2') format('woff2'),
+         url('./fonts/space\ age.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+}
+
+a {
+    color: inherit;
+}
+
+.sidebar {
+    position: relative;
+    flex: 0 0 auto;
+    color: var(--white);
+}
+
+.sidebar figcaption {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.main-logo {
+    position: absolute;
+    top: 45vh;
+    width: 100%;
+    text-align: center;
+    font-family: 'Space Age', sans-serif;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.main-logo::before {
+    content: '';
+    background: url('./img/face_logo2.png') no-repeat;
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+}
+
+.main-logo > span {
+    color: var(--accent-clr)
+}
+
+
+main {
+    flex: 1 1 auto;
+}
