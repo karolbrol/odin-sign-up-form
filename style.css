@@ -1,6 +1,11 @@
 :root {
-    --white: rgb(224, 219, 204);
-    --accent-clr: rgb(238, 175, 57);
+    --white-clr: rgb(248, 248, 248);
+    --accent-clr: rgb(226, 161, 40);
+    --light-clr: rgb(230, 230, 230);
+    --lmid-clr:rgb(188, 188, 206);
+    --mid-clr: rgb(102, 102, 121);
+    --dark-clr: rgb(41, 41, 54);
+    --accent-dark-clr: rgb(36, 18, 54);
 }
 
 @font-face {
@@ -15,6 +20,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -28,7 +34,7 @@ a {
 .sidebar {
     position: relative;
     flex: 0 0 auto;
-    color: var(--white);
+    color: var(--white-clr);
 }
 
 .sidebar figcaption {
@@ -60,10 +66,105 @@ a {
 }
 
 .main-logo > span {
-    color: var(--accent-clr)
+    color: var(--accent-clr);
+    font-family: 'Space Age', sans-serif;
 }
 
 
 main {
     flex: 1 1 auto;
+    color: var(--dark-clr);
+    background-color: var(--light-clr);
+
+}
+.top-section,
+form,
+.bottom-section {
+    padding-left: 2rem;
+    padding-right: 4rem;
+}
+
+
+.top-section {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+.top-section p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+form {
+    background-color: var(--white-clr);
+    box-shadow: 0 5px 7px 0 var(--mid-clr);
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+form h2 {
+    margin-bottom: 1rem;
+}
+
+.form-ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.form-li {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+.form-li ~ .form-li {
+    margin-top: .5rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 700;    
+}
+
+input {
+    padding: .2rem .5rem;
+    appearance: none;
+    border: 1px solid var(--lmid-clr);
+    border-radius: .3rem;
+}
+
+input:not(:placeholder-shown):not(:focus):invalid {
+    border: 1px solid red;
+    background-color: rgb(255, 236, 236);
+}
+
+input:focus {
+    border-color: (--mid-clr);
+    box-shadow: inset 0 0 5px 0 var(--mid-clr);
+}
+
+.form-li > div {
+    flex: 0 1 300px;
+}
+
+.bottom-section {
+    padding-top: 3rem;
+}
+
+.bottom-section button {
+    color: var(--accent-clr);
+    background-color: var(--accent-dark-clr);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: .8rem 2rem;
+    border: .3rem solid var(--accent-dark-clr);
+    border-radius: .5rem;
+}
+
+.bottom-section button:hover {
+    background-color: transparent;
+    color: var(--accent-dark-clr);
 }

@@ -20,7 +20,80 @@
         <div class="main-logo">space<span>R</span></div>
     </div>
     <main>
-
+        <div class="top-section">
+            <p>
+                This is not a real online servce. It's just a practice project
+                which allows me to train my coding <em>muscles</em> to a degree
+                which might one day make me confident enough to flex them in public.
+            </p>
+            <p>
+                Sign up to this nonsense you cute li'l beast!
+            </p>
+        </div>
+        <form action="#" method="get" id="sign-up-form">
+                <h2>Let's fly high!</h2>
+            <ul class="form-ul">
+                <li class="form-li">
+                    <div>
+                        <label for="fname">
+                            first name
+                            <input type="text" name="first_name" id="fname"
+                            placeholder="" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="lname">
+                            last name
+                            <input type="text" name="last_name" id="lname" 
+                            placeholder="" required>
+                        </label>
+                    </div>
+                </li>
+                <li class="form-li">
+                    <div>
+                        <label for="email">
+                            email
+                            <input type="email" name="email" id="email" 
+                            placeholder=""
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            required>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="phone">
+                            phone number
+                            <input type="tel" name="phone" id="phone"
+                            placeholder=""
+                            pattern="(\+[0-9]{2})?([0-9]{9})">
+                        </label>
+                    </div>
+                </li>
+                <li class="form-li">
+                    <div>
+                        <label for="password1">
+                            password
+                            <input type="password" name="password1" id="password1"
+                            placeholder="" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="password2">
+                            confirm password
+                            <input type="password" name="password2" id="password2"
+                            placeholder="" required>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            
+        </form>
+        <div class="bottom-section">
+            <button type="submit" form="sign-up-form"> Create Account</button>
+            <p class="login-p">
+                Already have an account?
+                <a href="#">Log in</a>
+            </p>
+        </div>
     </main>
     
 </body>
