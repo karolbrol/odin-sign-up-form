@@ -5,7 +5,7 @@
     --lmid-clr:rgb(188, 188, 206);
     --mid-clr: rgb(102, 102, 121);
     --dark-clr: rgb(41, 41, 54);
-    --accent-dark-clr: rgb(36, 18, 54);
+    --accent-dark-clr: rgb(26, 18, 54);
 }
 
 @font-face {
@@ -35,6 +35,7 @@ a {
     position: relative;
     flex: 0 0 auto;
     color: var(--white-clr);
+    background-color: rgb(35, 31, 41);
 }
 
 .sidebar figcaption {
@@ -45,10 +46,18 @@ a {
     width: 100%;
 }
 
-.main-logo {
+.logo-container {
     position: absolute;
-    top: 45vh;
+    top: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+.main-logo {
     text-align: center;
     font-family: 'Space Age', sans-serif;
     font-size: 50px;
@@ -56,14 +65,6 @@ a {
     align-items: center;
 }
 
-.main-logo::before {
-    content: '';
-    background: url('./img/face_logo2.png') no-repeat;
-    background-size: cover;
-    width: 70px;
-    height: 70px;
-    display: inline-block;
-}
 
 .main-logo > span {
     color: var(--accent-clr);
@@ -109,15 +110,17 @@ form h2 {
 .form-ul {
     list-style-type: none;
     margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 600px;
 }
 
 .form-li {
     display: flex;
     gap: 3rem;
     flex-wrap: wrap;
-}
-.form-li ~ .form-li {
-    margin-top: .5rem;
+    flex: 1 0 200px;
 }
 
 label {
@@ -125,7 +128,8 @@ label {
     flex-direction: column;
     text-transform: uppercase;
     font-size: .9rem;
-    font-weight: 700;    
+    font-weight: 700;
+    width: 100%;
 }
 
 input {
@@ -135,14 +139,26 @@ input {
     border-radius: .3rem;
 }
 
-input:not(:placeholder-shown):not(:focus):invalid {
+input:not(:placeholder-shown):not(:focus):invalid,
+input.error {
     border: 1px solid red;
     background-color: rgb(255, 236, 236);
 }
 
+div.error {
+    color:red;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
 input:focus {
-    border-color: (--mid-clr);
-    box-shadow: inset 0 0 5px 0 var(--mid-clr);
+    border-color: blue;
+
+    outline: 1px solid blue;
+    box-shadow: 3px 3px 5px 0 var(--lmid-clr);
 }
 
 .form-li > div {
@@ -167,4 +183,21 @@ input:focus {
 .bottom-section button:hover {
     background-color: transparent;
     color: var(--accent-dark-clr);
+}
+
+.login-p {
+    margin-top: 1rem;
+}
+
+.login-p a {
+    color: var(--accent-dark-clr);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    .sidebar {
+        display: none;
+    }
+    
 }
